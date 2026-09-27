@@ -58,54 +58,6 @@ h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute
 .rtable tr:nth-child(1) td:first-child{color:#F4C542;font-weight:700}.rtable tr:nth-child(2) td:first-child{color:#C9D3DB;font-weight:700}.rtable tr:nth-child(3) td:first-child{color:#D98C4E;font-weight:700}
 .rtable tr.me td{background:color-mix(in srgb,var(--brass) 14%,transparent)}
 @media (max-width:900px){.rankgrid{grid-template-columns:minmax(0,1fr)}}
-.tab .tb{display:inline-block;min-width:18px;margin-left:6px;padding:1px 5px;border-radius:9px;background:var(--brass);color:#1E1507;font-family:var(--f-mono);font-size:10px;font-weight:600;line-height:1.5}
-.cfilter{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;margin-bottom:18px}
-.cfilter input[type=search]{background:var(--bg-2);border:1px solid var(--line-2);border-radius:8px;color:var(--text);padding:8px 10px;font:inherit;font-size:14px;min-width:0;width:220px;max-width:100%}
-.card .nb{position:absolute;top:8px;left:8px;font-family:var(--f-mono);font-size:9px;font-weight:600;letter-spacing:.08em;background:var(--brass);color:#1E1507;padding:2px 5px;border-radius:4px}
-.cempty{color:var(--muted);padding:20px 0}
-.dnav{display:flex;gap:6px;justify-content:center}
-.kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--line-2);border-bottom-width:2px;border-radius:4px;padding:0 5px;color:var(--text)}
-.sq.pk::after{content:'';width:22%;height:22%;border-radius:50%;background:#C23A22a0;box-shadow:0 0 0 2px #fff6}
-.sq.pksel{box-shadow:inset 0 0 0 999px #C23A2240}
-.bp.drag{transition:none!important;z-index:20;filter:drop-shadow(0 10px 12px #000a)}
-.board.dragging .sq{cursor:grabbing}
-.lead{max-width:70ch;margin:-6px 0 18px}
-.lcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
-.lcard{display:grid;gap:10px;align-content:start;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px}
-.lcard.fixed{background:var(--bg-2)}
-.lch{display:flex;justify-content:space-between;align-items:center;gap:8px}
-.lch b{font-size:16px}
-.lch input{flex:1}
-.lcard .mini{max-width:100%}
-.lcard .mini i[data-open]{cursor:pointer}
-.lcard.empty{border-style:dashed;border-color:var(--line-2);background:transparent;min-height:180px;place-content:center;justify-items:center;text-align:center;cursor:pointer;color:var(--text);font:inherit}
-.lcard.empty:hover{border-color:var(--brass)}
-.lcard.empty .plus{font-size:40px;line-height:1;color:var(--brass-hi);font-weight:300}
-.lcard.empty b{font-size:17px}
-.lcard.dis{cursor:default}
-.draft{display:grid;gap:18px}
-.dhead{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.dhead h2{font-family:var(--f-disp);font-size:40px;font-weight:800;color:var(--brass-hi);line-height:1}
-.dprog{flex:1;min-width:120px;height:8px;border-radius:5px;background:var(--bg-2);border:1px solid var(--line);overflow:hidden}
-.dprog i{display:block;height:100%;background:linear-gradient(90deg,var(--brass-lo),var(--brass-hi));transition:width .4s}
-.offers{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.offer{display:grid;grid-template-rows:1fr auto;gap:6px;animation:pop .4s both}
-.obtn{align-content:start}
-.obtn{display:grid;justify-items:center;gap:5px;text-align:center;padding:14px 8px 12px;border-radius:14px;cursor:pointer;color:var(--text);font:inherit;
-  border:1px solid color-mix(in srgb,var(--rc) 40%,var(--line));background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--rc) 18%,transparent),transparent 70%),var(--panel)}
-.obtn:hover{border-color:var(--rc)}
-.offer.sel .obtn{border-color:var(--brass-hi);box-shadow:0 0 0 3px var(--brass),0 10px 30px #0008;transform:translateY(-3px)}
-.obtn .m{width:92px;height:92px}
-.obtn b{font-size:15px;line-height:1.2}
-.obtn small{color:var(--muted);font-size:11px}
-.obtn .ichips{justify-content:center}
-.oinfo{justify-self:center}
-.dboard{display:grid;gap:8px;max-width:680px}
-.slot.tgt{box-shadow:inset 0 0 0 3px var(--ok);animation:tgt 1.2s ease-in-out infinite}
-@keyframes tgt{50%{box-shadow:inset 0 0 0 3px transparent}}
-.slot[data-open]{cursor:pointer}
-@media (max-width:900px){.offers{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media (max-width:560px){.offers{grid-template-columns:repeat(2,minmax(0,1fr))}.obtn .m{width:72px;height:72px}.lcards{grid-template-columns:minmax(0,1fr)}}
 .rollbadge{margin-left:auto;display:flex;align-items:center;gap:10px;background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:6px 12px 6px 8px;cursor:pointer}
 .rollbadge svg{width:34px;height:34px;transform:rotate(-90deg)}
 .rollbadge .n{font-family:var(--f-mono);font-weight:600;font-size:18px;font-variant-numeric:tabular-nums}
@@ -402,8 +354,6 @@ input[type=text],select{background:var(--bg-2);border:1px solid var(--line-2);bo
   .brand .b1{font-size:32px}
   .tabs{flex-wrap:nowrap;width:100%}
   .tab{flex:1;padding:8px 2px;font-size:13px}
-  .tab{position:relative}.tab .tb{position:absolute;top:-4px;right:-2px;margin:0;font-size:9px;min-width:16px}
-  .cfilter input[type=search]{width:100%}
   .stage{min-height:360px;padding:16px}
   .multi{grid-template-columns:repeat(3,minmax(0,1fr))}
   .multi.many{grid-template-columns:repeat(4,minmax(0,1fr))}
@@ -426,15 +376,20 @@ input[type=text],select{background:var(--bg-2);border:1px solid var(--line-2);bo
 <header class="top">
   <div class="brand" aria-label="Chess RNG"><span class="b1">Chess</span><span class="b2">RNG</span></div>
   <nav class="tabs" role="tablist">
-    <button class="tab" role="tab" data-tab="load" id="t-load">Loadouts</button>
-    <button class="tab" role="tab" data-tab="coll" id="t-coll">Lexikon</button>
+    <button class="tab" role="tab" data-tab="roll" id="t-roll">Würfeln</button>
+    <button class="tab" role="tab" data-tab="coll" id="t-coll">Sammlung</button>
+    <button class="tab" role="tab" data-tab="load" id="t-load">Loadout</button>
     <button class="tab" role="tab" data-tab="play" id="t-play">Spielen</button>
     <button class="tab" role="tab" data-tab="rank" id="t-rank">Rangliste</button>
   </nav>
-  
+  <button class="rollbadge" id="badge" type="button" aria-label="Verfügbare Würfe">
+    <svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="var(--line-2)" stroke-width="3"/><circle id="ring" cx="18" cy="18" r="15" fill="none" stroke="var(--brass)" stroke-width="3" stroke-linecap="round" stroke-dasharray="94.25" stroke-dashoffset="0"/></svg>
+    <span class="l"><span><span class="n" id="bn">0</span> Würfe</span><small id="bt">+1 in 10 s</small></span>
+  </button>
 </header>
 
 <main>
+  <section id="tab-roll" hidden></section>
   <section id="tab-coll" hidden></section>
   <section id="tab-load" hidden></section>
   <section id="tab-play" hidden></section>
@@ -448,17 +403,17 @@ input[type=text],select{background:var(--bg-2);border:1px solid var(--line-2);bo
 const RAR=[
   {n:'Gewöhnlich',c:'#A7B2AA',odds:1},
   {n:'Ungewöhnlich',c:'#6ED08A',odds:3},
-  {n:'Selten',c:'#52A8F5',odds:5},
-  {n:'Episch',c:'#B77DF4',odds:8},
-  {n:'Legendär',c:'#F4B73A',odds:15},
-  {n:'Mythisch',c:'#FF5A84',odds:45},
-  {n:'Uralt',c:'#E8843F',odds:150},
-  {n:'Himmlisch',c:'#8AEAF2',odds:500},
-  {n:'Göttlich',c:'#FFE9A0',odds:1700},
-  {n:'Kosmisch',c:'#8C98FF',odds:6500},
-  {n:'Unendlich',c:'#FF9CF0',odds:25000},
-  {n:'Paradox',c:'#F4F4F4',odds:120000},
-  {n:'Urknall',c:'#FFC46B',odds:650000},
+  {n:'Selten',c:'#52A8F5',odds:6},
+  {n:'Episch',c:'#B77DF4',odds:16},
+  {n:'Legendär',c:'#F4B73A',odds:45},
+  {n:'Mythisch',c:'#FF5A84',odds:140},
+  {n:'Uralt',c:'#E8843F',odds:450},
+  {n:'Himmlisch',c:'#8AEAF2',odds:1500},
+  {n:'Göttlich',c:'#FFE9A0',odds:5000},
+  {n:'Kosmisch',c:'#8C98FF',odds:20000},
+  {n:'Unendlich',c:'#FF9CF0',odds:80000},
+  {n:'Paradox',c:'#F4F4F4',odds:350000},
+  {n:'Urknall',c:'#FFC46B',odds:2000000},
 ];
 // effektive Wahrscheinlichkeit (Würfel prüft von der seltensten Stufe abwärts)
 const PEFF=(()=>{const p=[];let rest=1;for(let i=RAR.length-1;i>=1;i--){p[i]=rest/RAR[i].odds;rest*=1-1/RAR[i].odds}p[0]=rest;return p})();
@@ -632,12 +587,10 @@ function DEFN(id){return DEF[id]?DEF[id].n:id}
 const BYR=RAR.map((_,i)=>CAT.filter(D=>D.r===i));
 // Eigene Chance pro Figur: leicht gestreut um den Wert der Stufe, stärkere Figuren etwas seltener
 function niceOdds(x){if(x<10)return Math.round(x*10)/10;const m=Math.pow(10,Math.floor(Math.log10(x))-1);return Math.round(x/m)*m}
-// Chance pro Angebot im Draft. Normale Runden bieten keine Könige an, die letzte Runde nur Könige.
-BYR.forEach(list=>{const sorted=list.map((D,i)=>[D,i]).sort((a,b)=>a[0].v-b[0].v||a[1]-b[1]);const n=sorted.length;sorted.forEach(([D],i)=>{D.w=1/(n===1?1:0.75+0.6*i/(n-1))})});
-const NK=RAR.map((_,i)=>BYR[i].filter(D=>!D.T.king)), KG=RAR.map((_,i)=>BYR[i].filter(D=>D.T.king));
-const kingTier=t=>{for(let i=t;i>=0;i--)if(KG[i].length)return i;return KG.findIndex(l=>l.length)};
-NK.forEach((list,r)=>{const sw=list.reduce((a,D)=>a+D.w,0);list.forEach(D=>{D.odds=niceOdds(1/(PEFF[r]*D.w/sw))})});
-{const pk={};RAR.forEach((_,t)=>{const kt=kingTier(t);pk[kt]=(pk[kt]||0)+PEFF[t]});KG.forEach((list,r)=>{const sw=list.reduce((a,D)=>a+D.w,0);list.forEach(D=>{D.odds=niceOdds(1/((pk[r]||1e-9)*D.w/sw))})})}
+// Die Chance der Stufe bleibt gleich; innerhalb der Stufe bekommt jede Figur ein eigenes Gewicht (stärkere etwas seltener).
+BYR.forEach((list,r)=>{const sorted=list.map((D,i)=>[D,i]).sort((a,b)=>a[0].v-b[0].v||a[1]-b[1]);const n=sorted.length;
+  sorted.forEach(([D],i)=>{D.w=1/(n===1?1:0.75+0.6*i/(n-1))});const sw=list.reduce((a,D)=>a+D.w,0);
+  list.forEach(D=>{D.odds=niceOdds(1/(PEFF[r]*D.w/sw))})});
 const VANILLA=['turm','springer','laeufer','dame','koenig','laeufer','springer','turm','bauer','bauer','bauer','bauer','bauer','bauer','bauer','bauer'];
 
 /* ================= PIECE ART ================= */
@@ -956,28 +909,21 @@ function pickAI(s,lvl){
 }
 
 /* ================= SAVE ================= */
-const KEY='chessrng-v1', MAXLOAD=5;
-const CLASSIC={name:'Klassisch',slots:VANILLA.slice(),fixed:1};
-function fresh(){return{v:2,seen:{bauer:1,turm:1,springer:1,laeufer:1,dame:1,koenig:1},fresh:{},loads:[],draft:null,drafts:0,opt:{},tab:'load',game:null,name:'',
+const KEY='chessrng-v1', CAP=360, TICK=10000;
+function fresh(){return{v:1,coll:{bauer:8,turm:2,springer:2,laeufer:2,dame:1,koenig:1},seen:{bauer:1,turm:1,springer:1,laeufer:1,dame:1,koenig:1},
+  loads:[{name:'Klassisch',slots:VANILLA.slice()},{name:'Loadout 2',slots:VANILLA.slice()},{name:'Loadout 3',slots:VANILLA.slice()}],active:0,
+  rolls:10,tick:Date.now(),total:0,best:0,hist:[],opt:{fast:false,auto:false,dev:false},tab:'roll',game:null,
   setup:{mode:'ai',lvl:'normal',foe:'mirror',color:'w',wl:0,bl:0}}}
-function load(){let o=null;try{const raw=localStorage.getItem(KEY);if(raw)o=JSON.parse(raw)}catch(e){}return normalize(o)}
-function normalize(o){const f=fresh();if(!o)return f;
-  const S=Object.assign(f,o);S.setup=Object.assign(fresh().setup,o.setup||{});
-  const clean=sl=>(sl||[]).slice(0,16).map(id=>DEF[id]&&id!=='_d'?id:null);
-  if(o.v!==2){ // Umstieg vom Würfel-System: gültige alte Aufstellungen werden zu fertigen Loadouts
-    const old=(o.loads||[]).map(L=>({name:L.name,slots:clean(L.slots)})).filter(L=>L.slots.filter(id=>id&&DEF[id].T.king).length===1&&L.slots.join()!==VANILLA.join());
-    S.loads=old.slice(0,MAXLOAD).map(L=>({...L,created:Date.now()}));S.v=2;S.tab='load';S.draft=null;S.drafts=S.loads.length;
-    ['coll','rolls','tick','total','best','hist','active'].forEach(k=>delete S[k]);S.setup.wl=0;S.setup.bl=0}
-  S.loads=(S.loads||[]).slice(0,MAXLOAD).map(L=>{const sl=clean(L.slots);while(sl.length<16)sl.push(null);return{...L,slots:sl}});
-  if(S.draft&&(!S.draft.picks||S.draft.picks.length!==16))S.draft=null;
-  if(!['load','coll','play','rank'].includes(S.tab))S.tab='load';
+function load(){let o=null;try{const raw=localStorage.getItem(KEY);if(raw)o=JSON.parse(raw)}catch(e){}
+  const f=fresh();if(!o||o.v!==1)return f;
+  const S=Object.assign(f,o);S.opt=Object.assign(fresh().opt,o.opt||{});S.opt.dev=false;S.setup=Object.assign(fresh().setup,o.setup||{});
+  for(const k in S.coll)if(!DEF[k])delete S.coll[k];
+  S.loads.forEach(L=>{L.slots=(L.slots||[]).slice(0,16).map(id=>DEF[id]&&id!=='_d'?id:null);while(L.slots.length<16)L.slots.push(null)});
   if(S.game){try{if(!S.game.s||S.game.s.b.some(p=>p&&!DEF[p.d]))S.game=null}catch(e){S.game=null}}
   return S}
 let S=load();
 const NET=()=>window.CRNG_NET||null;
 let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}},200)}
-function loadList(){return[CLASSIC,...S.loads]}
-function getLoad(i){const L=loadList();return L[i]||L[0]}
 
 /* ================= UI HELPERS ================= */
 const $=(q,r=document)=>r.querySelector(q), $$=(q,r=document)=>[...r.querySelectorAll(q)];
@@ -985,55 +931,120 @@ const fmt=n=>Number(n).toLocaleString('de-DE');
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtO=x=>x.toLocaleString('de-DE',{maximumFractionDigits:1});
 function oddsTxt(r){return'1 zu '+fmtO(r===0?Math.round(10/PEFF[0])/10:RAR[r].odds)}
-function pOdds(id){return'1 zu '+fmtO(DEF[id].odds)+(DEF[id].T.king?' in der Königsrunde':'')}
+function pOdds(id){return'1 zu '+fmtO(DEF[id].odds)}
 let toastT=0;function toast(msg){const t=$('#toast');t.textContent=msg;t.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>t.hidden=true,2600)}
 const known=id=>!!S.seen[id];
 function slotValue(slots){return slots.reduce((a,id)=>a+(id?DEF[id].v:0),0)}
-const strTxt=sl=>slotValue(sl).toFixed(1).replace('.',',');
-function loadIssue(slots){let kings=0,n=0;for(const id of slots){if(!id)continue;n++;if(DEF[id].T.king)kings++}
-  if(!n)return'Das Loadout ist leer.';if(kings!==1)return'Das Loadout braucht genau eine Königsfigur.';return null}
-const wait=ms=>new Promise(r=>setTimeout(r,ms));
+function loadIssue(slots){
+  const used={};let kings=0,n=0;for(const id of slots){if(!id)continue;n++;used[id]=(used[id]||0)+1;if(DEF[id].T.king)kings++}
+  if(!n)return'Das Loadout ist leer.';
+  if(kings===0)return'Es fehlt eine Figur mit dem Trait „König“.';
+  if(kings>1)return`Nur eine Königsfigur erlaubt (aktuell ${kings}).`;
+  for(const id in used)if(used[id]>(S.coll[id]||0))return`Du besitzt ${DEF[id].n} nur ${S.coll[id]||0}×, eingesetzt sind ${used[id]}.`;
+  return null}
 
-/* ================= TABS ================= */
-const UI={hand:null,dside:'w'};
-function tabBadges(){const n=Object.keys(S.fresh||{}).length;const t=$('#t-coll');if(t)t.innerHTML='Lexikon'+(n?`<span class="tb" aria-label="${n} neu">${n}</span>`:'')}
-function setTab(t){S.tab=t;save();tabBadges();$$('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
-  ['load','coll','play','rank'].forEach(k=>$('#tab-'+k).hidden=k!==t);
-  ({coll:renderColl,load:renderLoad,play:renderPlay,rank:renderRank})[t]();window.scrollTo(0,0)}
+/* ================= TABS / BADGE ================= */
+const UI={rolling:false,hand:null,dside:'w'};
+function setTab(t){S.tab=t;save();$$('.tab').forEach(b=>b.setAttribute('aria-selected',b.dataset.tab===t));
+  ['roll','coll','load','play','rank'].forEach(k=>$('#tab-'+k).hidden=k!==t);
+  ({roll:renderRoll,coll:renderColl,load:renderLoad,play:renderPlay,rank:renderRank})[t]();}
 $$('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
-function hype(id){return new Promise(res=>{const D=DEF[id];const h=document.createElement('div');h.id='hype';h.className='r'+D.r;
-  h.innerHTML=`<div><div class="ht">${RAR[D.r].n}</div><div class="ho">${pOdds(id)}</div><div class="hm">${pieceSVG(id,'w')}</div><div class="hn">${esc(D.n)} wird dir angeboten</div></div>`;
-  document.body.appendChild(h);let done=false;const end=()=>{if(done)return;done=true;h.remove();res()};h.onclick=end;setTimeout(end,D.r>=12?5200:D.r>=9?3800:D.r>=7?3000:1900)})}
+$('#badge').onclick=()=>setTab('roll');
+function tick(){
+  const now=Date.now();
+  if(S.rolls>=CAP)S.tick=now;
+  else{const n=Math.floor((now-S.tick)/TICK);if(n>0){S.rolls=Math.min(CAP,S.rolls+n);S.tick+=n*TICK;if(S.rolls>=CAP)S.tick=now;save();updateRollBtns()}}
+  const rem=S.rolls>=CAP?0:TICK-(now-S.tick);
+  $('#bn').textContent=fmt(S.rolls);
+  $('#bt').textContent=S.rolls>=CAP?'Vorrat voll':`+1 in ${Math.ceil(rem/1000)} s`;
+  $('#ring').setAttribute('stroke-dashoffset',(94.25*(rem/TICK)).toFixed(1));
+  if(S.opt.auto&&!UI.rolling&&S.rolls>0&&S.tab==='roll')doRoll(1);
+}
+
+/* ================= ROLL ================= */
+function renderRoll(){
+  const el=$('#tab-roll');
+  el.innerHTML=`<div class="rollgrid">
+   <div class="rollmain">
+    <div class="stage" id="stage"><div class="idle"><div class="big">Wirf die Würfel</div><p class="note">Jeder Wurf bringt eine Figur. Je seltener, desto stärker und prächtiger.</p></div></div>
+    <div class="rollbar">
+      <button class="btn primary big" id="bRoll" type="button">Würfeln</button>
+      <button class="btn" id="bRoll10" type="button">10× würfeln</button>
+      <button class="btn" id="bRoll100" type="button">100× würfeln</button>
+      <label class="tog"><input type="checkbox" id="optAuto" ${S.opt.auto?'checked':''}> Auto-Würfeln</label>
+      <label class="tog"><input type="checkbox" id="optFast" ${S.opt.fast?'checked':''}> Ohne Animation</label>
+    </div>
+    <div class="panel"><h3>Letzte Würfe</h3><div class="hist" id="hist"></div></div>
+   </div>
+   <aside class="panel">
+    <h3>Seltenheiten</h3>
+    <p class="note">Alle 10 Sekunden gibt es einen Wurf. Bis zu ${CAP} sammeln sich an, auch wenn die Seite zu ist.</p>
+    <ol class="odds" id="odds"></ol>
+    <div class="stats" id="stats"></div>
+    <details class="settings"><summary>Einstellungen</summary><div class="inner">
+      <div><button class="btn danger sm" id="bReset" type="button">Spielstand zurücksetzen</button></div>
+    </div></details>
+   </aside></div>`;
+  $('#bRoll').onclick=()=>doRoll(1);$('#bRoll10').onclick=()=>doRoll(10);$('#bRoll100').onclick=()=>doRoll(100);
+  $('#optAuto').onchange=e=>{S.opt.auto=e.target.checked;save()};
+  $('#optFast').onchange=e=>{S.opt.fast=e.target.checked;save()};
+  const rb=$('#bReset');rb.onclick=()=>{if(rb.dataset.c){localStorage.removeItem(KEY);S=fresh();save();setTab('roll');toast('Spielstand zurückgesetzt.')}else{rb.dataset.c=1;rb.textContent='Wirklich alles löschen? Nochmal klicken';setTimeout(()=>{if(rb.isConnected){delete rb.dataset.c;rb.textContent='Spielstand zurücksetzen'}},4000)}};
+  renderHist();renderOdds();updateRollBtns();
+}
+function updateRollBtns(){const a=$('#bRoll'),b=$('#bRoll10');if(!a)return;a.disabled=UI.rolling||S.rolls<1;b.disabled=UI.rolling||S.rolls<1;const c=$('#bRoll100');if(c){c.disabled=UI.rolling||S.rolls<1;c.textContent=`${Math.max(1,Math.min(100,S.rolls))}× würfeln`}
+  a.textContent=`Würfeln (${fmt(S.rolls)})`;b.textContent=`${Math.max(1,Math.min(10,S.rolls))}× würfeln`}
+function renderOdds(){const el=$('#odds');if(!el)return;
+  el.innerHTML=RAR.map((R,i)=>{const tot=BYR[i].length,got=BYR[i].filter(D=>S.seen[D.id]).length;
+    return`<li class="r${i} ${got?'got':''}"><span class="sw"></span><span class="rtxt">${R.n}</span><span class="o" title="Chance, eine Figur dieser Stufe zu ziehen">${oddsTxt(i)}</span><span class="c">${got}/${tot}</span></li>`}).join('');
+  const found=CAT.filter(D=>S.seen[D.id]).length;
+  $('#stats').innerHTML=`<div class="stat"><b>${fmt(S.total)}</b><span>Würfe insgesamt</span></div><div class="stat r${S.best}"><b class="rtxt">${RAR[S.best].n}</b><span>Seltenster Fund</span></div><div class="stat"><b>${found}/${CAT.length}</b><span>Figuren entdeckt</span></div><div class="stat"><b>${fmt(Object.values(S.coll).reduce((a,b)=>a+b,0))}</b><span>Figuren im Besitz</span></div>`}
+function renderHist(){const el=$('#hist');if(!el)return;el.innerHTML=S.hist.length?S.hist.map(id=>`<button class="hchip r${DEF[id].r}" data-open="${id}" title="${esc(DEF[id].n)}" type="button">${pieceSVG(id,'w')}</button>`).join(''):'<span class="note">Noch nichts gewürfelt.</span>'}
+function pickPiece(){let t=0;for(let i=RAR.length-1;i>=1;i--)if(Math.random()<1/RAR[i].odds){t=i;break}
+  const L=BYR[t];let x=Math.random()*L.reduce((a,D)=>a+D.w,0);for(const D of L){x-=D.w;if(x<=0)return D}return L[L.length-1]}
+function rollOnce(free){if(!free)S.rolls--;const D=pickPiece(),t=D.r;const isNew=!S.seen[D.id];
+  S.coll[D.id]=(S.coll[D.id]||0)+1;S.seen[D.id]=1;S.total++;if(t>S.best)S.best=t;S.hist.unshift(D.id);if(S.hist.length>30)S.hist.length=30;return{id:D.id,t,isNew}}
+const wait=ms=>new Promise(r=>setTimeout(r,ms));
+async function doRoll(n,free){
+  if(UI.rolling)return;const k=free?n:Math.min(n,S.rolls);if(k<1){toast('Kein Wurf übrig. Der nächste kommt in ein paar Sekunden.');return}
+  UI.rolling=true;updateRollBtns();
+  const res=[];for(let i=0;i<k;i++)res.push(rollOnce(free));save();tick();
+  const best=res.reduce((a,b)=>b.t>a.t?b:a);
+  const fast=S.opt.fast||(S.opt.auto&&best.t<5);
+  if(!fast)await reel(best.t,k>1?700:1150);
+  if(best.t>=5&&!S.opt.fast)await hype(best);
+  if(k===1)showReveal(res[0]);else showMulti(res);
+  renderHist();renderOdds();UI.rolling=false;updateRollBtns();
+}
+async function reel(t,dur){
+  const st=$('#stage');if(!st)return;st.style.removeProperty('--rc');
+  st.innerHTML='<div class="reel"><div class="reelname" id="rn"></div><div class="reelodds" id="ro"></div></div>';
+  const rn=$('#rn'),ro=$('#ro');let el=0,d=45;const top=Math.min(RAR.length-1,Math.max(t,2)+2);
+  while(el<dur){const r=Math.floor(Math.random()*(top+1));rn.textContent=RAR[r].n;rn.parentElement.className='reel r'+r;ro.textContent=oddsTxt(r);await wait(d);el+=d;d=Math.min(190,d*1.13)}
+  rn.textContent=RAR[t].n;rn.parentElement.className='reel r'+t;ro.textContent=oddsTxt(t);await wait(320);
+}
+function hype(r){return new Promise(res=>{const D=DEF[r.id];const h=document.createElement('div');h.id='hype';h.className='r'+r.t;
+  h.innerHTML=`<div><div class="ht">${RAR[r.t].n}</div><div class="ho">${pOdds(r.id)}</div><div class="hm">${pieceSVG(r.id,'w')}</div><div class="hn">${esc(D.n)}</div></div>`;
+  document.body.appendChild(h);let done=false;const end=()=>{if(done)return;done=true;h.remove();res()};h.onclick=end;setTimeout(end,r.t>=12?5200:r.t>=9?3800:r.t>=7?3000:1900)})}
+function showReveal(r){const st=$('#stage');if(!st)return;const D=DEF[r.id];st.className='stage r'+r.t;
+  st.innerHTML=`<div class="reveal r${r.t}"><span class="burst"></span><div class="model">${pieceSVG(r.id,'w')}</div>
+   <span class="pill r${r.t}">${RAR[r.t].n} · ${pOdds(r.id)}</span><div class="rname">${esc(D.n)}</div>
+   <p class="rdesc">${esc(D.d)}</p>${r.isNew?'<span class="newb">Neu entdeckt</span>':''}
+   <div class="rmeta">Im Besitz: ${S.coll[r.id]}×</div><button class="btn sm" data-open="${r.id}" type="button">Details ansehen</button></div>`}
+function showMulti(res){const st=$('#stage');if(!st)return;const best=res.reduce((a,b)=>b.t>a.t?b:a);st.className='stage r'+best.t;
+  const g=new Map();for(const r of res){const e=g.get(r.id)||{...r,n:0};e.n++;e.isNew=e.isNew||r.isNew;g.set(r.id,e)}
+  const list=[...g.values()].sort((a,b)=>b.t-a.t||b.n-a.n);const big=res.length>10;
+  st.innerHTML=`<div class="multi ${big?'many':''}">${big?`<div class="msum">${res.length} Würfe · ${list.length} verschiedene Figuren · ${list.filter(x=>x.isNew).length} neu</div>`:''}${list.map((r,i)=>`<button class="mcard r${r.t}" data-open="${r.id}" style="animation-delay:${Math.min(i,30)*35}ms" type="button">${r.n>1?`<span class="mn">×${r.n}</span>`:''}<span class="m">${pieceSVG(r.id,'w')}</span><b>${esc(DEF[r.id].n)}</b><small>${r.isNew?'NEU · ':''}${pOdds(r.id)}</small></button>`).join('')}</div>`}
 
 /* ================= COLLECTION ================= */
-UI.cf={q:'',f:'all',sort:'rar'};
 function renderColl(){
-  const el=$('#tab-coll');const found=CAT.filter(D=>S.seen[D.id]).length;const F=UI.cf;const nNew=Object.keys(S.fresh||{}).length;
-  let h=`<div class="chead"><h2>Lexikon</h2><span class="note mono">${found} von ${CAT.length} entdeckt</span></div>
-   <p class="hint lead">Entdeckt ist jede Figur, die dir in einem Draft schon einmal angeboten wurde. Die Chance gilt pro Angebot.</p>
-   <div class="cfilter"><input type="search" id="cq" placeholder="Figur oder Eigenschaft suchen" value="${esc(F.q)}" aria-label="Sammlung durchsuchen">
-    <div class="seg" id="cf">${[['all','Alle'],['own','Entdeckt'],['miss','Fehlend'],['new',`Neu${nNew?' ('+nNew+')':''}`]].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${F.f===v}">${l}</button>`).join('')}</div>
-    <div class="seg" id="cs">${[['rar','Seltenheit'],['name','Name'],['str','Stärke']].map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${F.sort===v}">${l}</button>`).join('')}</div>
-    ${nNew?'<button class="btn sm" id="cseen" type="button">Alle als gesehen markieren</button>':''}</div>`;
-  const q=F.q.trim().toLowerCase();
-  const match=D=>{const k=known(D.id);
-    if(F.f==='own'&&!k)return false;if(F.f==='miss'&&k)return false;if(F.f==='new'&&!(S.fresh&&S.fresh[D.id]))return false;
-    if(q){if(!k)return false;const hay=(D.n+' '+D.d+' '+D.t.map(t=>TRAITS[t].n).join(' ')+' '+RAR[D.r].n).toLowerCase();if(!hay.includes(q))return false}return true};
-  const sorter=(a,b)=>F.sort==='name'?a.n.localeCompare(b.n,'de'):F.sort==='str'?b.v-a.v:0;
-  let shown=0;
-  const groups=F.sort==='rar'?RAR.map((R,i)=>[i,BYR[i]]):[[null,CAT.slice()]];
-  groups.forEach(([i,all])=>{const list=all.filter(match).sort(sorter);if(!list.length)return;shown+=list.length;
-    if(i!=null){const got=all.filter(D=>S.seen[D.id]).length;h+=`<div class="rgroup r${i}"><div class="rgh"><h3>${RAR[i].n}</h3><span>${oddsTxt(i)} · ${got}/${all.length}</span></div><div class="cgrid">`}
-    else h+='<div class="rgroup"><div class="cgrid">';
-    for(const D of list){const k=known(D.id);const nw=S.fresh&&S.fresh[D.id];
-      h+=`<button class="card r${D.r} ${k?'':'unk'}" data-open="${D.id}" type="button">${nw?'<span class="nb">NEU</span>':''}<span class="m">${pieceSVG(D.id,k?'w':'sil')}</span><b>${k?esc(D.n):'???'}</b><small>${pOdds(D.id)}${k&&D.t.includes('king')?' · König':''}</small></button>`}
+  const el=$('#tab-coll');const found=CAT.filter(D=>S.seen[D.id]).length;
+  let h=`<div class="chead"><h2>Sammlung</h2><span class="note mono">${found} von ${CAT.length} entdeckt · ${fmt(Object.values(S.coll).reduce((a,b)=>a+b,0))} Figuren im Besitz</span></div>`;
+  RAR.forEach((R,i)=>{const list=BYR[i];const got=list.filter(D=>S.seen[D.id]).length;
+    h+=`<div class="rgroup r${i}"><div class="rgh"><h3>${R.n}</h3><span>${oddsTxt(i)} · ${got}/${list.length}</span></div><div class="cgrid">`;
+    for(const D of list){const k=known(D.id),c=S.coll[D.id]||0;
+      h+=`<button class="card r${i} ${k?'':'unk'}" data-open="${D.id}" type="button">${c?`<span class="cnt">×${c}</span>`:''}<span class="m">${pieceSVG(D.id,k?'w':'sil')}</span><b>${k?esc(D.n):'???'}</b><small>${pOdds(D.id)}${k&&D.t.includes('king')?' · König':''}</small></button>`}
     h+='</div></div>'});
-  if(!shown)h+='<p class="cempty">Keine Figur passt zu diesem Filter.</p>';
   el.innerHTML=h;
-  const cq=$('#cq');cq.oninput=e=>{F.q=e.target.value;const pos=e.target.selectionStart;renderColl();const n=$('#cq');n.focus();try{n.setSelectionRange(pos,pos)}catch(_){}}
-  $$('#cf button').forEach(b=>b.onclick=()=>{F.f=b.dataset.v;renderColl()});
-  $$('#cs button').forEach(b=>b.onclick=()=>{F.sort=b.dataset.v;renderColl()});
-  const cs=$('#cseen');if(cs)cs.onclick=()=>{S.fresh={};save();tabBadges();renderColl()};
 }
 function diagram(id,side){
   const s=newState();const c=27;s.b[c]=mk(s,id,0,c);const R=rules(s);
@@ -1048,123 +1059,115 @@ function diagram(id,side){
 }
 function traitList(D){if(!D.t.length)return'<p class="note">Keine besonderen Eigenschaften.</p>';
   return'<ul class="traits">'+D.t.map(t=>{const T=TRAITS[t];return`<li><b>${T.n}${T.rule?' <span class="tag">Regel</span>':''}</b><span>${esc(T.d(D))}</span></li>`}).join('')+'</ul>'}
-function openDetail(id0){
-  let id=id0,D,k;const m=document.createElement('div');m.className='modal';
-  const seen=x=>{if(S.fresh&&S.fresh[x]){delete S.fresh[x];save();tabBadges();if(S.tab==='coll')renderColl()}};
-  const go=d=>{const i=CAT.findIndex(x=>x.id===id);id=CAT[(i+d+CAT.length)%CAT.length].id;draw()};
-  const draw=()=>{D=DEF[id];k=known(id);seen(id);m.innerHTML=`<div class="sheet r${D.r}" role="dialog" aria-modal="true" aria-label="${k?esc(D.n):'Unbekannte Figur'}">
+function openDetail(id){
+  const D=DEF[id],k=known(id);const m=document.createElement('div');m.className='modal';
+  const draw=()=>{m.innerHTML=`<div class="sheet r${D.r}" role="dialog" aria-modal="true" aria-label="${k?esc(D.n):'Unbekannte Figur'}">
     <button class="x" type="button" aria-label="Schließen">×</button>
     <div class="dleft"><div class="m">${pieceSVG(id,k?UI.dside:'sil')}</div>
       ${k?`<div class="sidesel seg"><button type="button" data-side="w" aria-pressed="${UI.dside==='w'}">Weiß</button><button type="button" data-side="b" aria-pressed="${UI.dside==='b'}">Schwarz</button></div>`:''}
       <span class="pill r${D.r}">${RAR[D.r].n}</span><span class="note mono">${pOdds(id)} je Wurf</span>
-      <span class="note">In deinen Loadouts: <b>${S.loads.reduce((a,L)=>a+L.slots.filter(x=>x===id).length,0)}×</b> · Stärke ${D.v}</span>
-      <div class="dnav"><button class="btn sm" type="button" data-nav="-1" aria-label="Vorherige Figur">‹ Vorherige</button><button class="btn sm" type="button" data-nav="1" aria-label="Nächste Figur">Nächste ›</button></div></div>
+      <span class="note">Im Besitz: <b>${S.coll[id]||0}×</b> · Stärke ${D.v}</span></div>
     <div class="dright">${k?`<div class="dname">${esc(D.n)}</div><p class="ddesc">${esc(D.d)}</p>
       <h3>Zugmuster</h3><div class="diagwrap">${diagram(id,UI.dside)}</div><h3>Eigenschaften</h3>${traitList(D)}`
-      :`<div class="dname">???</div><p class="ddesc">Diese Figur wurde dir noch in keinem Draft angeboten. Sie gehört zur Stufe ${RAR[D.r].n}.</p>`}</div></div>`;
-    m.querySelector('.x').onclick=close;m.querySelectorAll('[data-side]').forEach(b=>b.onclick=()=>{UI.dside=b.dataset.side;draw()});
-    m.querySelectorAll('[data-nav]').forEach(b=>b.onclick=()=>go(+b.dataset.nav))};
-  const close=()=>{m.remove();document.removeEventListener('keydown',esc_)};const esc_=e=>{if(e.key==='Escape')close();else if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1)};
-  let tx=null;m.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});m.addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>70)go(dx<0?1:-1)});
+      :`<div class="dname">???</div><p class="ddesc">Diese Figur hast du noch nicht gewürfelt. Sie gehört zur Stufe ${RAR[D.r].n}.</p>`}</div></div>`;
+    m.querySelector('.x').onclick=close;m.querySelectorAll('[data-side]').forEach(b=>b.onclick=()=>{UI.dside=b.dataset.side;draw()})};
+  const close=()=>{m.remove();document.removeEventListener('keydown',esc_)};const esc_=e=>{if(e.key==='Escape')close()};
   m.onclick=e=>{if(e.target===m)close()};document.addEventListener('keydown',esc_);draw();document.body.appendChild(m);m.querySelector('.x').focus();
 }
 document.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)openDetail(b.dataset.open)});
 
-/* ================= LOADOUTS + DRAFT ================= */
-function rollOffer(kingRound){const t0=(()=>{for(let i=RAR.length-1;i>=1;i--)if(Math.random()<1/RAR[i].odds)return i;return 0})();
-  const t=kingRound?kingTier(t0):t0;const L=kingRound?KG[t]:NK[t];let x=Math.random()*L.reduce((a,D)=>a+D.w,0);for(const D of L){x-=D.w;if(x<=0)return D.id}return L[L.length-1].id}
-function offerIds(kingRound){const out=[];for(let n=0;out.length<5&&n<300;n++){const id=rollOffer(kingRound);if(!out.includes(id))out.push(id)}
-  if(out.length<5){const pool=CAT.filter(D=>!!D.T.king===kingRound&&!out.includes(D.id)).sort((a,b)=>a.r-b.r||a.v-b.v);while(out.length<5&&pool.length)out.push(pool.shift().id)}
-  return out}
-function makeOffer(kingRound){const out=offerIds(kingRound);
-  for(const id of out)if(!S.seen[id]){S.seen[id]=1;S.fresh=S.fresh||{};S.fresh[id]=1}return out}
-function startDraft(){if(S.loads.length>=MAXLOAD){toast('Alle Plätze sind belegt. Lösche zuerst ein Loadout.');return}
-  S.draft={picks:Array(16).fill(null),offer:makeOffer(false),sel:null,shown:false};save();renderLoad()}
-function draftRound(){return S.draft.picks.filter(Boolean).length}
-function finishDraft(){const d=S.draft;S.drafts=(S.drafts||0)+1;const name=`Draft ${S.drafts}`;
-  S.loads.push({name,slots:d.picks.slice(),created:Date.now()});S.draft=null;save();toast(`„${name}“ ist fertig und gesperrt.`);renderLoad()}
-function pickOffer(i){const d=S.draft;const id=d.offer[i];if(!id)return;
-  if(DEF[id].T.king){const free=d.picks.findIndex(x=>!x);d.picks[free]=id;save();finishDraft();return}
-  d.sel=d.sel===i?null:i;save();renderLoad()}
-function placeAt(sq){const d=S.draft;if(d.sel==null||d.picks[sq])return;const free=d.picks.filter(x=>!x).length;
-  d.picks[sq]=d.offer[d.sel];d.sel=null;d.shown=false;const r=draftRound();d.offer=makeOffer(r===15);save();tabBadges();renderLoad()}
-function lboardHTML(slots,opts={}){const row=(r,start)=>{let h=`<span class="rk">${r}</span>`;for(let x=0;x<8;x++){const i=start+x,id=slots[i];const y=i<8?0:1;const light=(x+y)%2===1;
-    const tgt=opts.target&&!id;h+=`<button class="slot ${light?'l':'d'} ${id&&DEF[id].T.king?'kg':''} ${tgt?'tgt':''}" ${id?`data-open="${id}"`:tgt?`data-place="${i}"`:''} type="button" aria-label="Feld ${'abcdefgh'[x]}${y+1}${id?': '+esc(DEF[id].n):' frei'}">${id?pieceSVG(id,'w'):''}</button>`}return h};
-  return'<div class="lframe"><div class="lboard">'+row(2,8)+row(1,0)+'<span></span>'+'abcdefgh'.split('').map(c=>`<span class="fl">${c}</span>`).join('')+'</div></div>'}
-function renderLoad(){const el=$('#tab-load');if(S.draft){renderDraft(el);return}
-  const L=S.loads;const free=MAXLOAD-L.length;
-  let h=`<div class="chead"><h2>Loadouts</h2><span class="note mono">${L.length} von ${MAXLOAD} Plätzen belegt</span></div>
-   <p class="hint lead">Ein Loadout wird gedraftet: 15 Runden lang bekommst du 5 Figuren angeboten, nimmst eine und stellst sie auf ein freies Feld. In der letzten Runde wählst du deinen König. Fertige Loadouts sind gesperrt und können nur noch gespielt werden.</p>
-   <div class="lcards">`;
-  const card=(Lo,i,fixed)=>{const best=Lo.slots.filter(Boolean).reduce((a,id)=>!a||DEF[id].r>DEF[a].r?id:a,null);
-    return`<div class="lcard ${fixed?'fixed':''}"><div class="lch"><b>${esc(Lo.name)}</b>${fixed?'<span class="chip">Standard</span>':'<span class="chip">Gesperrt</span>'}</div>
-     ${miniHTML(Lo.slots,'w')}
-     <div class="lcm note mono">Stärke ${strTxt(Lo.slots)}${best?` · seltenste: <span class="r${DEF[best].r} rtxt">${esc(DEF[best].n)}</span>`:''}</div>
-     <div class="lbtns"><button class="btn sm primary" data-playl="${i}" type="button">Spielen</button>${fixed?'':`<button class="btn sm" data-ren="${i-1}" type="button">Umbenennen</button><button class="btn sm danger" data-del="${i-1}" type="button">Löschen</button>`}</div></div>`};
-  h+=card(CLASSIC,0,true);L.forEach((Lo,i)=>h+=card(Lo,i+1,false));
-  for(let i=0;i<free;i++)h+=`<button class="lcard empty" data-new type="button"><span class="plus">+</span><b>Neuer Draft</b><span class="note">Freier Platz</span></button>`;
-  if(!free)h+=`<div class="lcard empty dis"><b>Alle Plätze belegt</b><span class="note">Lösche ein Loadout, um neu zu drafte.</span></div>`;
-  el.innerHTML=h+'</div>';
-  $$('[data-new]',el).forEach(b=>b.onclick=startDraft);
-  $$('[data-playl]',el).forEach(b=>b.onclick=()=>{S.setup.wl=+b.dataset.playl;if(S.setup.mode==='local')S.setup.bl=S.setup.bl||0;save();setTab('play')});
-  $$('[data-del]',el).forEach(b=>{const i=+b.dataset.del;b.onclick=()=>{if(!b.dataset.c){b.dataset.c=1;b.textContent='Wirklich löschen?';setTimeout(()=>{if(b.isConnected){delete b.dataset.c;b.textContent='Löschen'}},3500);return}
-    const nm=S.loads[i].name;S.loads.splice(i,1);for(const k of['wl','bl']){if(S.setup[k]===i+1)S.setup[k]=0;else if(S.setup[k]>i+1)S.setup[k]--}save();toast(`„${nm}“ gelöscht.`);renderLoad()}});
-  $$('[data-ren]',el).forEach(b=>{const i=+b.dataset.ren;b.onclick=()=>{const c=b.closest('.lcard').querySelector('.lch b');const inp=document.createElement('input');inp.type='text';inp.maxLength=24;inp.value=S.loads[i].name;inp.setAttribute('aria-label','Name des Loadouts');
-    c.replaceWith(inp);inp.focus();inp.select();const done=()=>{S.loads[i].name=inp.value.trim()||S.loads[i].name;save();renderLoad()};inp.onblur=done;inp.onkeydown=e=>{if(e.key==='Enter')inp.blur();if(e.key==='Escape'){inp.value=S.loads[i].name;inp.blur()}}}});
+/* ================= LOADOUT ================= */
+function usedIn(slots){const u={};slots.forEach(id=>{if(id)u[id]=(u[id]||0)+1});return u}
+function freeOf(id){const L=S.loads[S.active];return(S.coll[id]||0)-(usedIn(L.slots)[id]||0)-(UI.hand&&UI.hand.id===id&&UI.hand.from==='board'?1:0)}
+function renderLoad(){
+  const el=$('#tab-load');const L=S.loads[S.active];const issue=loadIssue(L.slots);
+  let b='<div class="lboard"><span></span>';
+  const row=(r,start)=>{let h=`<span class="rk">${r}</span>`;for(let x=0;x<8;x++){const i=start+x,id=L.slots[i];const y=i<8?0:1;const light=(x+y)%2===1;
+    h+=`<button class="slot ${light?'l':'d'} ${id&&DEF[id].T.king?'kg':''}" data-slot="${i}" type="button" draggable="${!!id}" aria-label="Feld ${'abcdefgh'[x]}${y+1}${id?': '+esc(DEF[id].n):' leer'}">${id?pieceSVG(id,'w'):''}</button>`}return h};
+  b='<div class="lframe"><div class="lboard">'+row(2,8)+row(1,0)+'<span></span>'+'abcdefgh'.split('').map(c=>`<span class="fl">${c}</span>`).join('')+'</div></div>';
+  const owned=CAT.filter(D=>(S.coll[D.id]||0)>0).sort((a,b)=>b.r-a.r||b.v-a.v);
+  el.innerHTML=`<div class="lgrid"><div class="lmain">
+    <div class="ltabs">${S.loads.map((l,i)=>`<button class="ltab" type="button" data-load="${i}" aria-selected="${i===S.active}">${esc(l.name)}<small>Stärke ${slotValue(l.slots).toFixed(1).replace('.',',')}${loadIssue(l.slots)?' · unvollständig':''}</small></button>`).join('')}</div>
+    <div class="lname"><label for="lname">Name</label><input type="text" id="lname" maxlength="24" value="${esc(L.name)}"></div>
+    ${b}
+    <div class="lstatus">${issue?`<span class="bad">${esc(issue)}</span>`:`<span class="ok">Bereit zum Spielen</span>`}<span class="note mono">${L.slots.filter(Boolean).length}/16 Figuren · Stärke ${slotValue(L.slots).toFixed(1).replace('.',',')}</span></div>
+    ${UI.hand?`<div class="hand"><span class="m">${pieceSVG(UI.hand.id,'w')}</span><span>In der Hand: <b>${esc(DEF[UI.hand.id].n)}</b>. Klicke ein Feld zum Abstellen.</span><button class="btn sm" id="dropHand" type="button">Zurücklegen</button></div>`:''}
+    <div class="lbtns"><button class="btn sm" id="lVan" type="button">Klassische Aufstellung</button><button class="btn sm" id="lBest" type="button">Stärkste Aufstellung</button><button class="btn sm" id="lClr" type="button">Leeren</button></div>
+    <p class="hint">Stelle bis zu 16 Figuren auf deine beiden Reihen. Genau eine muss den Trait „König“ haben. Schwarz spielt dieselbe Aufstellung gespiegelt.</p>
+   </div>
+   <aside class="panel"><h3>Deine Figuren</h3><p class="note">Figur wählen, dann ein Feld anklicken. Auf dem Brett eine Figur anklicken, um sie aufzunehmen. Ziehen mit der Maus geht auch.</p>
+    <div class="pal" id="pal">${owned.map(D=>{const f=freeOf(D.id);return`<button class="pcard r${D.r} ${UI.hand&&UI.hand.id===D.id&&UI.hand.from==='pal'?'sel':''} ${f<=0?'none':''}" data-pal="${D.id}" draggable="${f>0}" type="button"><span class="m">${pieceSVG(D.id,'w')}</span><b>${esc(D.n)}</b><small>${f} von ${S.coll[D.id]} frei</small></button>`}).join('')}</div>
+   </aside></div>`;
+  $$('[data-load]',el).forEach(x=>x.onclick=()=>{S.active=+x.dataset.load;UI.hand=null;save();renderLoad()});
+  $('#lname').oninput=e=>{L.name=e.target.value||'Loadout';save();$$('[data-load]')[S.active].firstChild.textContent=L.name};
+  $$('[data-slot]',el).forEach(x=>{const i=+x.dataset.slot;x.onclick=()=>slotClick(i);
+    x.ondragstart=e=>{e.dataTransfer.setData('text/plain','s:'+i)};x.ondragover=e=>{e.preventDefault();x.classList.add('over')};x.ondragleave=()=>x.classList.remove('over');
+    x.ondrop=e=>{e.preventDefault();const d=e.dataTransfer.getData('text/plain');if(d.startsWith('s:')){const j=+d.slice(2);[L.slots[i],L.slots[j]]=[L.slots[j],L.slots[i]]}else if(d.startsWith('p:')){const id=d.slice(2);if(freeOf(id)>0)L.slots[i]=id}save();renderLoad()}});
+  $$('[data-pal]',el).forEach(x=>{const id=x.dataset.pal;x.onclick=()=>{if(UI.hand&&UI.hand.from==='board'){UI.hand=null;renderLoad();return}if(freeOf(id)<=0){toast(`Alle ${DEF[id].n} sind schon aufgestellt.`);return}UI.hand=UI.hand&&UI.hand.id===id?null:{id,from:'pal'};renderLoad()};
+    x.ondragstart=e=>e.dataTransfer.setData('text/plain','p:'+id)});
+  const pal=$('#pal');pal.ondragover=e=>e.preventDefault();pal.ondrop=e=>{const d=e.dataTransfer.getData('text/plain');if(d.startsWith('s:')){L.slots[+d.slice(2)]=null;save();renderLoad()}};
+  if($('#dropHand'))$('#dropHand').onclick=()=>{UI.hand=null;renderLoad()};
+  $('#lVan').onclick=()=>{const u=usedIn(VANILLA);for(const id in u)if((S.coll[id]||0)<u[id]){toast(`Dafür fehlt dir: ${DEF[id].n}.`);return}L.slots=VANILLA.slice();UI.hand=null;save();renderLoad()};
+  $('#lClr').onclick=()=>{L.slots=Array(16).fill(null);UI.hand=null;save();renderLoad()};
+  $('#lBest').onclick=()=>{const r=bestLoadout();if(!r){toast('Du besitzt keine Königsfigur.');return}L.slots=r;UI.hand=null;save();renderLoad()};
 }
-function renderDraft(el){const d=S.draft;const r=draftRound();const kingR=r===15;const free=16-r;
-  const bestNew=d.shown?null:d.offer.reduce((a,id)=>!a||DEF[id].r>DEF[a].r?id:a,null);
-  el.innerHTML=`<div class="draft">
-   <div class="dhead"><div><h2>Draft</h2><span class="note mono">Runde ${r+1} von 16</span></div><div class="dprog" aria-hidden="true"><i style="width:${r/16*100}%"></i></div><button class="btn sm danger" id="dAbort" type="button">Draft abbrechen</button></div>
-   <p class="hint lead">${kingR?'Letzte Runde: Wähle deinen <b>König</b>. Er kommt auf das letzte freie Feld, danach ist das Loadout fertig und gesperrt.':d.sel==null?'Wähle eine der fünf Figuren.':'Tippe jetzt auf ein freies Feld, um <b>'+esc(DEF[d.offer[d.sel]].n)+'</b> dort hinzustellen. Oder wähle eine andere Figur.'}${!kingR&&free===2?' Das letzte freie Feld bleibt für deinen König.':''}</p>
-   <div class="offers">${d.offer.map((id,i)=>{const D=DEF[id];return`<div class="offer r${D.r} ${d.sel===i?'sel':''}" style="animation-delay:${i*70}ms">
-      <button class="obtn" data-pick="${i}" type="button" aria-pressed="${d.sel===i}"><span class="m">${pieceSVG(id,'w')}</span><b>${esc(D.n)}</b><span class="pill r${D.r}">${RAR[D.r].n}</span><small class="mono">${pOdds(id)}</small>
-      <span class="ichips">${D.t.slice(0,4).map(t=>`<span class="chip ${TRAITS[t].rule?'rule':''}">${TRAITS[t].n}</span>`).join('')}</span></button>
-      <button class="btn sm oinfo" data-open="${id}" type="button">Zugmuster</button></div>`}).join('')}</div>
-   <div class="dboard"><h3>Dein Loadout</h3>${lboardHTML(d.picks,{target:d.sel!=null})}<p class="note mono">${r} von 16 Figuren · Stärke ${strTxt(d.picks)}</p></div></div>`;
-  $$('[data-pick]',el).forEach(b=>b.onclick=()=>pickOffer(+b.dataset.pick));
-  $$('[data-place]',el).forEach(b=>b.onclick=()=>placeAt(+b.dataset.place));
-  const ab=$('#dAbort');ab.onclick=()=>{if(!ab.dataset.c){ab.dataset.c=1;ab.textContent='Fortschritt verwerfen?';setTimeout(()=>{if(ab.isConnected){delete ab.dataset.c;ab.textContent='Draft abbrechen'}},3500);return}S.draft=null;save();renderLoad()};
-  if(bestNew&&DEF[bestNew].r>=5){d.shown=true;save();hype(bestNew)}else if(!d.shown){d.shown=true;save()}
-}
+function slotClick(i){const L=S.loads[S.active];const cur=L.slots[i];
+  if(UI.hand){const h=UI.hand;if(h.from==='pal'&&freeOf(h.id)<=0){UI.hand=null;renderLoad();return}
+    L.slots[i]=h.id;
+    if(cur)UI.hand={id:cur,from:'board'};
+    else if(h.from==='pal'&&freeOf(h.id)>0)UI.hand=h; else UI.hand=null;}
+  else if(cur){L.slots[i]=null;UI.hand={id:cur,from:'board'}}
+  save();renderLoad()}
+function bestLoadout(){const own=[];for(const id in S.coll)for(let i=0;i<S.coll[id];i++)own.push(DEF[id]);
+  const kings=own.filter(D=>D.T.king).sort((a,b)=>b.r-a.r||b.v-a.v);if(!kings.length)return null;
+  const rest=own.filter(D=>!D.T.king).sort((a,b)=>b.v-a.v).slice(0,15);
+  const pawns=rest.filter(D=>D.T.promote),big=rest.filter(D=>!D.T.promote);
+  const slots=Array(16).fill(null);slots[4]=kings[0].id;const back=[3,5,2,6,1,7,0];const front=[11,12,10,13,9,14,8,15];
+  const castles=big.filter(D=>D.T.castle&&kings[0].T.castle);
+  for(const D of big){let spot=back.find(i=>!slots[i]);if(spot==null)spot=front.find(i=>!slots[i]);if(spot!=null)slots[spot]=D.id}
+  // Rochade-Partner an den Rand
+  if(castles.length){for(const edge of[0,7]){const idx=slots.findIndex((id,i)=>i<8&&i!==edge&&id&&DEF[id].T.castle&&i!==0&&i!==7);if(idx>=0&&!(slots[edge]&&DEF[slots[edge]].T.castle))[slots[edge],slots[idx]]=[slots[idx],slots[edge]]}}
+  for(const D of pawns){let spot=front.find(i=>!slots[i]);if(spot==null)spot=back.find(i=>!slots[i]);if(spot!=null)slots[spot]=D.id}
+  return slots}
+
 /* ================= PLAY ================= */
 const GR={sel:null,moves:[],choice:null,hover:null,thinking:false,els:new Map(),resign:false};
-function genFoe(){ // der Computer draftet: nimmt jeweils die stärkste Figur
-  const slots=Array(16).fill(null);const back=[3,5,2,6,1,7,0],front=[11,12,10,13,9,14,8,15];
-  for(let r=0;r<15;r++){const offer=offerIds(false);
-    const id=offer.sort((a,b)=>DEF[b].v-DEF[a].v)[0];const pawn=DEF[id].T.promote;
-    let spot=(pawn?front:back).find(i=>!slots[i]);if(spot==null)spot=(pawn?back:front).find(i=>!slots[i]);slots[spot]=id}
-  const ko=offerIds(true);
-  slots[4]=ko.sort((a,b)=>DEF[b].r-DEF[a].r||DEF[b].v-DEF[a].v)[0];return slots}
+function genFoe(pS){
+  const V=slotValue(pS);const slots=VANILLA.slice();const pk=pS.find(id=>id&&DEF[id].T.king)||'koenig';slots[4]=pk;
+  const pool=CAT.filter(D=>!D.T.king);
+  for(let n=0;n<600;n++){const si=Math.floor(Math.random()*16);if(si===4)continue;const cur=slots[si],cand=pool[Math.floor(Math.random()*pool.length)];
+    const cv=cur?DEF[cur].v:0;if(cand.v<=cv)continue;if(si>=8&&cand.v>6&&Math.random()<.6)continue;
+    if(slotValue(slots)-cv+cand.v<=V*1.03+0.3)slots[si]=cand.id}
+  return slots}
 function buildState(w,b){const s=newState();
   w.forEach((id,i)=>{if(!id)return;const sq=(i<8?0:1)*8+(i%8);s.b[sq]=mk(s,id,0,sq)});
   b.forEach((id,i)=>{if(!id)return;const sq=(i<8?7:6)*8+(i%8);s.b[sq]=mk(s,id,1,sq)});return s}
 function renderPlay(){const el=$('#tab-play');if(!S.game){el.innerHTML=setupHTML();bindSetup();return}
   if(S.game.mode==='online')watchGame();
   el.innerHTML=gameHTML();GR.els=new Map();GR.sel=null;GR.moves=[];GR.choice=null;GR.resign=false;buildBoard();updateGame();maybeAI()}
-function miniHTML(slots,side){let h='<div class="mini">';for(const r of[1,0])for(let x=0;x<8;x++){const i=r*8+x,id=slots[i];const light=(x+r)%2===1;h+=`<i class="${light?'l':'d'}" ${id?`data-open="${id}" title="${esc(DEF[id].n)}"`:''}>${id?pieceSVG(id,side):''}</i>`}return h+'</div>'}
+function miniHTML(slots,side){let h='<div class="mini">';for(const r of[1,0])for(let x=0;x<8;x++){const i=r*8+x,id=slots[i];const light=(x+r)%2===1;h+=`<i class="${light?'l':'d'}">${id?pieceSVG(id,side):''}</i>`}return h+'</div>'}
 function segHTML(k,opts){return`<div class="seg" data-k="${k}">${opts.map(([v,l])=>`<button type="button" data-v="${v}" aria-pressed="${S.setup[k]===v}">${l}</button>`).join('')}</div>`}
-function selHTML(id,k){return`<select id="${id}" data-k="${k}">${loadList().map((l,i)=>`<option value="${i}" ${S.setup[k]===i?'selected':''}>${esc(l.name)} · Stärke ${strTxt(l.slots)}</option>`).join('')}</select>`}
-function setupHTML(){const st=S.setup;if(st.mode==='online')return onlineSetupHTML();const ai=st.mode==='ai';const wl=getLoad(st.wl),bl=getLoad(st.bl);
+function selHTML(id,k){return`<select id="${id}" data-k="${k}">${S.loads.map((l,i)=>`<option value="${i}" ${S.setup[k]===i?'selected':''}>${esc(l.name)}${loadIssue(l.slots)?' (unvollständig)':''}</option>`).join('')}</select>`}
+function setupHTML(){const st=S.setup;if(st.mode==='online')return onlineSetupHTML();const ai=st.mode==='ai';const wl=S.loads[st.wl]||S.loads[0],bl=S.loads[st.bl]||S.loads[0];
   const iw=loadIssue(wl.slots),ib=ai?null:loadIssue(bl.slots);
-  const foeTxt={classic:'Der Computer spielt die klassische Aufstellung.',mirror:'Der Computer bekommt eine exakte Kopie deines Loadouts.',random:'Der Computer draftet sich beim Start ein eigenes Loadout.'}[st.foe];
+  const foeTxt={classic:'Der Computer spielt die klassische Aufstellung.',mirror:'Der Computer bekommt eine exakte Kopie deines Loadouts.',random:'Der Computer würfelt sich eine Aufstellung mit ähnlicher Stärke wie deine.'}[st.foe];
   return`<div class="setupgrid"><div class="panel setup" style="gap:16px">
     <h2>Neue Partie</h2>
     <div class="field"><span class="lbl">Modus</span>${segHTML('mode',MODES)}</div>
     ${ai?`<div class="field"><label class="lbl" for="selW">Dein Loadout</label>${selHTML('selW','wl')}</div>
       <div class="field"><span class="lbl">Deine Farbe</span>${segHTML('color',[['w','Weiß'],['b','Schwarz'],['r','Zufall']])}</div>
       <div class="field"><span class="lbl">Stärke des Computers</span>${segHTML('lvl',[['leicht','Leicht'],['normal','Normal']])}</div>
-      <div class="field"><span class="lbl">Aufstellung des Computers</span>${segHTML('foe',[['mirror','Spiegel'],['random','Draft'],['classic','Klassisch']])}<p class="hint">${foeTxt}</p></div>`
+      <div class="field"><span class="lbl">Aufstellung des Computers</span>${segHTML('foe',[['mirror','Spiegel'],['random','Zufall'],['classic','Klassisch']])}<p class="hint">${foeTxt}</p></div>`
     :`<div class="field"><label class="lbl" for="selW">Weiß spielt</label>${selHTML('selW','wl')}</div>
       <div class="field"><label class="lbl" for="selB">Schwarz spielt</label>${selHTML('selB','bl')}</div>
-      <p class="hint">Ihr spielt abwechselnd am selben Gerät. Beide Loadouts kommen aus deinen Loadouts.</p>`}
+      <p class="hint">Ihr spielt abwechselnd am selben Gerät. Beide Loadouts kommen aus deiner Sammlung.</p>`}
     ${iw?`<p class="warn">${ai?'Dein Loadout':'Weiß'}: ${esc(iw)}</p>`:''}${ib?`<p class="warn">Schwarz: ${esc(ib)}</p>`:''}
     <div><button class="btn primary big" id="bStart" type="button" ${iw||ib?'disabled':''}>Partie starten</button></div>
     <p class="hint">Gewonnen wird, indem man die gegnerische Königsfigur schlägt. Schach wird angezeigt, verhindert aber keinen Zug.</p>
    </div>
    <div class="panel prevs"><h3>Aufstellungen</h3>
     <div class="prev"><div class="ph"><span>${ai?'Du':'Weiß'}: ${esc(wl.name)}</span><span class="mono">Stärke ${slotValue(wl.slots).toFixed(1).replace('.',',')}</span></div>${miniHTML(wl.slots,'w')}</div>
-    ${ai?(st.foe==='random'?'<div class="prev"><div class="ph"><span>Computer</span><span>draftet beim Start</span></div></div>':`<div class="prev"><div class="ph"><span>Computer</span><span class="mono">Stärke ${slotValue(st.foe==='classic'?VANILLA:wl.slots).toFixed(1).replace('.',',')}</span></div>${miniHTML(st.foe==='classic'?VANILLA:wl.slots,'b')}</div>`)
+    ${ai?(st.foe==='random'?'<div class="prev"><div class="ph"><span>Computer</span><span>wird beim Start gewürfelt</span></div></div>':`<div class="prev"><div class="ph"><span>Computer</span><span class="mono">Stärke ${slotValue(st.foe==='classic'?VANILLA:wl.slots).toFixed(1).replace('.',',')}</span></div>${miniHTML(st.foe==='classic'?VANILLA:wl.slots,'b')}</div>`)
       :`<div class="prev"><div class="ph"><span>Schwarz: ${esc(bl.name)}</span><span class="mono">Stärke ${slotValue(bl.slots).toFixed(1).replace('.',',')}</span></div>${miniHTML(bl.slots,'b')}</div>`}
    </div></div>`}
 const MODES=[['ai','Gegen Computer'],['local','2 Spieler lokal'],['online','Online']];
@@ -1173,15 +1176,15 @@ function bindSetup(){const el=$('#tab-play');if(S.setup.mode==='online'){bindOnl
   $$('select[data-k]',el).forEach(s=>s.onchange=()=>{S.setup[s.dataset.k]=+s.value;save();renderPlay()});
   $('#bStart').onclick=startGame}
 function startGame(){const st=S.setup;let w,b,ai=null;
-  if(st.mode==='ai'){const mine=getLoad(st.wl).slots.slice();const foe=st.foe==='classic'?VANILLA.slice():st.foe==='mirror'?mine.slice():genFoe();
+  if(st.mode==='ai'){const mine=S.loads[st.wl].slots.slice();const foe=st.foe==='classic'?VANILLA.slice():st.foe==='mirror'?mine.slice():genFoe(mine);
     const col=st.color==='r'?(Math.random()<.5?'w':'b'):st.color;if(col==='w'){w=mine;b=foe;ai=1}else{w=foe;b=mine;ai=0}}
-  else{w=getLoad(st.wl).slots.slice();b=getLoad(st.bl).slots.slice()}
+  else{w=S.loads[st.wl].slots.slice();b=S.loads[st.bl].slots.slice()}
   S.game={s:buildState(w,b),mode:st.mode,ai,lvl:st.lvl,flip:ai===0,last:null};save();renderPlay()}
 function gameHTML(){return`<div class="game"><div class="boardwrap"><div class="board" id="board"><div class="sqs" id="sqs"></div><div class="pcs" id="pcs"></div><div class="fxl" id="fxl"></div><div class="endcard" id="endcard" hidden></div></div></div>
   <aside class="side"><div class="panel status" id="status"></div><div class="panel choice" id="choice" hidden></div><div class="panel info" id="info"></div>
    <div class="panel"><h3>Geschlagen</h3><div class="caps" id="caps"></div></div>
    <div class="panel"><h3>Züge</h3><ol class="log" id="log"></ol></div>
-   <div class="gbtns"><button class="btn sm" id="bFlip" type="button">Brett drehen</button><button class="btn sm" id="bUndo" type="button">Zug zurück</button><button class="btn sm danger" id="bResign" type="button">Aufgeben</button><button class="btn sm" id="bMenu" type="button">Neue Partie</button></div>
+   <div class="gbtns"><button class="btn sm" id="bFlip" type="button">Brett drehen</button><button class="btn sm danger" id="bResign" type="button">Aufgeben</button><button class="btn sm" id="bMenu" type="button">Neue Partie</button></div>
   </aside></div>`}
 function disp(sq){const x=sq&7,y=sq>>3;return S.game.flip?[7-x,y]:[x,7-y]}
 function buildBoard(){const q=$('#sqs');let h='';
@@ -1192,39 +1195,12 @@ function buildBoard(){const q=$('#sqs');let h='';
   q.onmouseover=e=>{const b=e.target.closest('.sq');if(b&&GR.hover!==+b.dataset.sq){GR.hover=+b.dataset.sq;renderInfo()}};
   q.onmouseleave=()=>{GR.hover=null;renderInfo()};
   $('#bFlip').onclick=()=>{S.game.flip=!S.game.flip;save();buildBoard();updateGame()};
-  const bu=$('#bUndo');if(S.game.mode==='online')bu.hidden=true;else bu.onclick=undoMove;
-  setupDrag();
   const rs=$('#bResign');rs.onclick=()=>{const s=S.game.s;if(s.end)return;if(!GR.resign){GR.resign=true;rs.textContent='Wirklich aufgeben?';setTimeout(()=>{GR.resign=false;if(rs.isConnected)rs.textContent='Aufgeben'},3500);return}
     const g=S.game;const loser=g.mode==='ai'?1-g.ai:g.mode==='online'?g.me:s.turn;s.end={w:1-loser,why:`${loser===0?'Weiß':'Schwarz'} hat aufgegeben`};save();updateGame();if(g.mode==='online')sendOnline(s.ply,null)};
   $('#bMenu').onclick=()=>{leaveGame()};
 }
-function setupDrag(){const board=$('#board'),q=$('#sqs');let d=null;
-  const sqAt=(x,y)=>{const r=board.getBoundingClientRect();const c=Math.floor((x-r.left)/r.width*8),w=Math.floor((y-r.top)/r.height*8);if(c<0||c>7||w<0||w>7)return-1;
-    const X=S.game.flip?7-c:c,Y=S.game.flip?w:7-w;return Y*8+X};
-  q.addEventListener('pointerdown',e=>{if(e.button!==0)return;const b=e.target.closest('.sq');if(!b)return;const sq=+b.dataset.sq;const g=S.game,P=g.s.b[sq];
-    if(!P||P.o!==g.s.turn||!humanTurn())return;d={sq,x:e.clientX,y:e.clientY,moved:false,el:GR.els.get(P.u),id:e.pointerId}});
-  window.addEventListener('pointermove',e=>{if(!d||e.pointerId!==d.id)return;const dist=Math.hypot(e.clientX-d.x,e.clientY-d.y);
-    if(!d.moved){if(dist<6)return;d.moved=true;if(GR.sel!==d.sq){GR.suppress=false;sqClick(d.sq)}d.el=GR.els.get(S.game.s.b[d.sq].u);if(!d.el){d=null;return}d.el.classList.add('drag');board.classList.add('dragging')}
-    const r=board.getBoundingClientRect(),w=r.width/8;d.el.style.transform=`translate(${e.clientX-r.left-w/2}px,${e.clientY-r.top-w/2}px)`;e.preventDefault()},{passive:false});
-  const end=e=>{if(!d||e.pointerId!==d.id)return;const dd=d;d=null;if(!dd.moved)return;
-    dd.el.classList.remove('drag');board.classList.remove('dragging');const t=sqAt(e.clientX,e.clientY);GR.suppress=true;setTimeout(()=>{GR.suppress=false},0);
-    if(t>=0&&t!==dd.sq&&GR.moves.some(m=>m.t===t)){GR.suppress=false;sqClick(t);GR.suppress=true;setTimeout(()=>{GR.suppress=false},0)}else updateGame()};
-  window.addEventListener('pointerup',end);window.addEventListener('pointercancel',end)}
 function humanTurn(){const g=S.game;if(g.mode==='online')return!g.s.end&&g.s.turn===g.me&&!GR.sending;return!g.s.end&&!(g.mode==='ai'&&g.s.turn===g.ai)&&!GR.thinking}
-function undoMove(){const g=S.game;if(!g||g.mode==='online'||!g.hist||!g.hist.length||GR.thinking){toast('Es gibt keinen Zug zum Zurücknehmen.');return}
-  // gegen den Computer bis zum eigenen Zug zurück
-  let snap=JSON.parse(g.hist.pop());if(g.mode==='ai')while(snap.s.turn===g.ai&&g.hist.length)snap=JSON.parse(g.hist.pop());
-  if(g.mode==='ai'&&snap.s.turn===g.ai){toast('Es gibt keinen Zug zum Zurücknehmen.');return}
-  g.s=snap.s;g.last=snap.last;GR.sel=null;GR.moves=[];GR.choice=null;GR.peek=null;GR.peekMoves=[];
-  $('#pcs').innerHTML='';GR.els=new Map();save();updateGame()}
-function sqClick(sq){const g=S.game,s=g.s;
-  if(GR.suppress){GR.suppress=false;return}
-  const P0=s.b[sq];
-  // gegnerische Figur antippen: ihre Züge zeigen
-  if(P0&&!(GR.sel!=null&&GR.moves.some(m=>m.t===sq))&&(P0.o!==s.turn||!humanTurn())){GR.sel=null;GR.moves=[];GR.choice=null;
-    if(GR.peek===sq){GR.peek=null;GR.peekMoves=[]}else{GR.peek=sq;GR.peekMoves=genMoves(s,sq,rules(s),true)}updateGame();return}
-  GR.peek=null;GR.peekMoves=[];
-  if(!humanTurn())return;
+function sqClick(sq){const g=S.game,s=g.s;if(!humanTurn())return;
   if(GR.sel!=null){const ms=GR.moves.filter(m=>m.t===sq);if(ms.length===1){play(ms[0]);return}if(ms.length>1){GR.choice=ms;renderChoice();return}}
   const P=s.b[sq];GR.choice=null;
   if(P&&P.o===s.turn&&GR.sel!==sq){GR.sel=sq;GR.moves=genMoves(s,sq,rules(s),false);if(!GR.moves.length&&frozen(s,sq,P.o))toast('Diese Figur ist eingefroren.')}
@@ -1234,8 +1210,7 @@ const KL={mv:'Hinziehen',cp:'Hinziehen und schlagen',sh:'Schießen (bleibt stehe
 function renderChoice(){const c=$('#choice');if(!GR.choice){c.hidden=true;return}c.hidden=false;
   c.innerHTML=`<h3>Welcher Zug?</h3><div class="row">${GR.choice.map((m,i)=>`<button class="btn sm" data-ch="${i}" type="button">${KL[m.k]}</button>`).join('')}</div>`;
   $$('[data-ch]',c).forEach(b=>b.onclick=()=>play(GR.choice[+b.dataset.ch]))}
-function play(m){const g=S.game,s=g.s;const before=s.ply;
-  if(g.mode!=='online'){g.hist=g.hist||[];g.hist.push(JSON.stringify({s,last:g.last}));if(g.hist.length>40)g.hist.shift()}applyMove(s,m);g.last={f:m.f,t:m.t};GR.sel=null;GR.moves=[];GR.choice=null;fx(s.ev);save();updateGame();
+function play(m){const g=S.game,s=g.s;const before=s.ply;applyMove(s,m);g.last={f:m.f,t:m.t};GR.sel=null;GR.moves=[];GR.choice=null;fx(s.ev);save();updateGame();
   if(g.mode==='online')sendOnline(before,m);else maybeAI()}
 function maybeAI(){const g=S.game;if(!g||g.s.end||g.mode!=='ai'||g.s.turn!==g.ai||GR.thinking)return;GR.thinking=true;renderStatus();
   setTimeout(()=>{if(S.game!==g){GR.thinking=false;return}const t0=performance.now();const m=pickAI(g.s,g.lvl);const dt=performance.now()-t0;
@@ -1249,9 +1224,9 @@ const SHIELD_SVG='<svg viewBox="0 0 20 22"><path d="M2 2H18V10C18 16 10 20 10 20
 const CROWN_SVG='<svg viewBox="0 0 20 20"><path d="M2 15L3 5L7.5 10L10 3L12.5 10L17 5L18 15Z" fill="#F3CD7E" stroke="#3a2a0c" stroke-width="1.6" stroke-linejoin="round"/></svg>';
 function updateGame(){const g=S.game;if(!g)return;const s=g.s;const R=rules(s);
   // squares
-  const tg={};for(const m of GR.moves)tg[m.t]=(tg[m.t]||'')+' '+m.k;const pk=new Set((GR.peekMoves||[]).map(m=>m.t));
+  const tg={};for(const m of GR.moves)tg[m.t]=(tg[m.t]||'')+' '+m.k;
   const ck=!s.end&&inCheck(s,s.turn)?kingSq(s,s.turn):-1;
-  $$('#sqs .sq').forEach(b=>{const sq=+b.dataset.sq;const c=[];if(g.last&&(g.last.f===sq||g.last.t===sq))c.push('last');if(GR.sel===sq)c.push('sel');if(GR.peek===sq)c.push('pksel');if(pk.has(sq)&&!tg[sq])c.push('pk');if(sq===ck)c.push('chk');
+  $$('#sqs .sq').forEach(b=>{const sq=+b.dataset.sq;const c=[];if(g.last&&(g.last.f===sq||g.last.t===sq))c.push('last');if(GR.sel===sq)c.push('sel');if(sq===ck)c.push('chk');
     if(tg[sq]){const k=tg[sq];if(k.includes('cp'))c.push('cp');else if(k.includes('sh'))c.push('sh');else if(k.includes('cs'))c.push('cs');else if(k.includes('sw'))c.push('sw');else c.push('mv')}
     b.className='sq '+(((sq&7)+(sq>>3))%2===1?'l':'d')+' '+c.join(' ')});
   // pieces
@@ -1293,9 +1268,9 @@ function renderInfo(){const g=S.game;const el=$('#info');if(!g||!el)return;const
 /* ================= ONLINE-WARTESCHLANGE (Firebase, nur in der gehosteten Version) ================= */
 UI.q=null;
 function playerName(){return(S.name||'').trim().slice(0,20)||'Gast'}
-function onlineSetupHTML(){const n=NET();const st=S.setup;const wl=getLoad(st.wl);const iw=loadIssue(wl.slots);
+function onlineSetupHTML(){const n=NET();const st=S.setup;const wl=S.loads[st.wl]||S.loads[0];const iw=loadIssue(wl.slots);
   const head=`<div class="setupgrid"><div class="panel setup" style="gap:16px"><h2>Neue Partie</h2><div class="field"><span class="lbl">Modus</span>${segHTML('mode',MODES)}</div>`;
-  const prev=`<div class="panel prevs"><h3>Dein Loadout</h3><div class="prev"><div class="ph"><span>${esc(wl.name)}</span><span class="mono">Stärke ${strTxt(wl.slots)}</span></div>${miniHTML(wl.slots,'w')}</div></div>`;
+  const prev=`<div class="panel prevs"><h3>Dein Loadout</h3><div class="prev"><div class="ph"><span>${esc(wl.name)}</span><span class="mono">Stärke ${slotValue(wl.slots).toFixed(1).replace('.',',')}</span></div>${miniHTML(wl.slots,'w')}</div></div>`;
   if(!n)return head+`<p class="hint">Online-Partien laufen nur in der gehosteten Version des Spiels. Diese Vorschau hat keine Verbindung zum Server.</p></div>${prev}</div>`;
   if(UI.q){const sec=Math.floor((Date.now()-UI.q.t0)/1000);
     return head+`<div class="qbox"><span class="note">Suche Gegner</span><span class="qt" id="qtime">${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}</span>
@@ -1313,7 +1288,7 @@ function bindOnline(){const el=$('#tab-play');
   const pn=$('#pname');if(pn)pn.oninput=e=>{S.name=e.target.value.slice(0,20);save()};
   const bs=$('#bSearch');if(bs)bs.onclick=startSearch;
   const bc=$('#bQCancel');if(bc)bc.onclick=cancelSearch}
-function startSearch(){const n=NET();if(!n||UI.q)return;const L=getLoad(S.setup.wl);if(loadIssue(L.slots)){toast(loadIssue(L.slots));return}
+function startSearch(){const n=NET();if(!n||UI.q)return;const L=S.loads[S.setup.wl]||S.loads[0];if(loadIssue(L.slots)){toast(loadIssue(L.slots));return}
   UI.q={t0:Date.now(),cancel:null};
   UI.q.timer=setInterval(()=>{const e=$('#qtime');if(!UI.q){return}if(e){const sec=Math.floor((Date.now()-UI.q.t0)/1000);e.textContent=`${Math.floor(sec/60)}:${String(sec%60).padStart(2,'0')}`}},500);
   UI.q.cancel=n.search({name:playerName(),load:L.slots.slice()},ev=>{
@@ -1366,14 +1341,8 @@ function leaveGame(){maybeRecord();if(GR.unsub){GR.unsub();GR.unsub=null}clearIn
 window.CRNG_netReady=()=>{if(S.tab==='play')renderPlay()};
 window.addEventListener('beforeunload',()=>{if(UI.q&&UI.q.cancel)try{UI.q.cancel()}catch(e){}});
 
-/* ---------- Tastatur ---------- */
-document.addEventListener('keydown',e=>{if(e.target.closest('input,select,textarea')||document.querySelector('.modal')||e.ctrlKey||e.metaKey||e.altKey)return;
-  if(S.tab==='load'&&S.draft&&e.key>='1'&&e.key<='5'&&S.draft.offer[+e.key-1]){pickOffer(+e.key-1)}
-  else if(S.tab==='play'&&S.game){if(e.key==='Escape'){GR.sel=null;GR.moves=[];GR.choice=null;GR.peek=null;GR.peekMoves=[];updateGame()}
-    else if((e.key==='z'||e.key==='Backspace')&&S.game.mode!=='online'){e.preventDefault();undoMove()}}
-  else if(e.key>='1'&&e.key<='4'){const t=['load','coll','play','rank'][+e.key-1];if($('#t-'+t))setTab(t)}});
 /* ================= BOOT ================= */
-setTab(S.tab||'load');
+tick();setInterval(tick,250);setTab(S.tab||'roll');
 </script>
 
 <script type="module">

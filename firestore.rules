@@ -1,0 +1,57 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Warteschlange (ohne Anmeldung)
+    match /queue/{pid} {
+      allow read, write: if true;
+    }
+
+    // Partien: lesen, anlegen und Züge schreiben erlaubt, löschen nicht
+    match /games/{id} {
+      allow read, create, update: if true;
+      allow delete: if false;
+    }
+
+    // Ergebnis pro Partie und Spieler. Kann nur einmal angelegt werden
+    // und muss zum Ausgang der Partie passen.
+    match /results/{rid} {
+      allow read: if true;
+      allow create: if rid == request.resource.data.game + '_' + request.resource.data.player
+                    && validOutcome(get(/databases/$(database)/documents/games/$(request.resource.data.game)).data,
+                                    request.resource.data.player, request.resource.data.outcome);
+      allow update, delete: if false;
+    }
+
+    // Ranglisten-Eintrag pro Spieler
+    match /players/{id} {
+      allow read: if true;
+      allow create: if validName() && resultOK(0, 0, 0, 0);
+      allow update: if validName() && (
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'updated'])
+                    || (request.resource.data.lastGame != resource.data.lastGame
+                        && resultOK(resource.data.wins, resource.data.losses, resource.data.draws, resource.data.games)));
+      allow delete: if false;
+
+      function validName() {
+        return request.resource.data.name is string && request.resource.data.name.size() <= 20;
+      }
+      // Zähler dürfen nur um genau das Ergebnis der neuen, gültigen Partie steigen
+      function resultOK(w, l, d, g) {
+        let n = request.resource.data;
+        let o = getAfter(/databases/$(database)/documents/results/$(n.lastGame + '_' + id)).data.outcome;
+        return n.games == g + 1 && (
+             (o == 'win'  && n.wins == w + 1 && n.losses == l     && n.draws == d)
+          || (o == 'loss' && n.wins == w     && n.losses == l + 1 && n.draws == d)
+          || (o == 'draw' && n.wins == w     && n.losses == l     && n.draws == d + 1));
+      }
+    }
+
+    function validOutcome(g, p, o) {
+      return g.status == 'ended' && (g.wP == p || g.bP == p) && (
+           (g.winner == 'draw' && o == 'draw')
+        || (g.winner == 'w' && ((g.wP == p && o == 'win') || (g.bP == p && o == 'loss')))
+        || (g.winner == 'b' && ((g.bP == p && o == 'win') || (g.wP == p && o == 'loss'))));
+    }
+  }
+}

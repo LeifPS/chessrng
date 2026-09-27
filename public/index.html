@@ -397,6 +397,7 @@ input[type=text],select{background:var(--bg-2);border:1px solid var(--line-2);bo
 </main>
 <div id="toast" hidden></div>
 
+<script src="https://canopybase.pages.dev/sdk/canopy-sdk.js"></script>
 <script>
 "use strict";
 /* ================= DATA ================= */
@@ -923,7 +924,45 @@ function load(){let o=null;try{const raw=localStorage.getItem(KEY);if(raw)o=JSON
   return S}
 let S=load();
 const NET=()=>window.CRNG_NET||null;
-let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}},200)}
+let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{S.savedAt=Date.now();canopyDirty=true;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}},200)}
+
+/* ================= CANOPY ================= */
+// Canopy Base (canopybase.pages.dev): Läuft das Spiel dort im Player, wird der Spielstand zusätzlich in der
+// Canopy ID gespeichert (alle 30 s und beim Verlassen). Direkt auf chessrng.web.app ändert sich nichts,
+// außer dem Button "In Canopy ID übertragen" in den Einstellungen. Lokal gespeichert wird immer wie bisher.
+const CANOPY_URL='https://canopybase.pages.dev', CANOPY_GAME='chess-rng', PID_KEY='chessrng-player';
+const CAN=()=>(window.Canopy&&window.Canopy.inHub)?window.Canopy:null;
+let canopyDirty=false, canopyOn=false;
+function canopyPayload(){let pid=null;try{pid=localStorage.getItem(PID_KEY)}catch(e){}return{state:S,playerId:pid}}
+function canopyApply(d){ // Cloud-Stand übernehmen und neu laden
+  try{localStorage.setItem(KEY,JSON.stringify(d.state));if(d.playerId)localStorage.setItem(PID_KEY,d.playerId);sessionStorage.setItem('crng-canopy-applied','1')}catch(e){return}
+  location.reload()}
+function canopyPush(){const C=CAN();if(!C||!canopyOn||!canopyDirty)return;canopyDirty=false;
+  C.save(canopyPayload()).then(r=>{
+    if(r&&r.conflict){ // auf einem anderen Gerät wurde gespeichert: der neuere Stand gewinnt
+      const remote=r.data&&r.data.state;
+      if(remote&&(remote.savedAt||0)>(S.savedAt||0))canopyApply(r.data);
+      else return C.save(canopyPayload(),{force:true});
+    }
+  }).catch(()=>{canopyDirty=true})}
+(function canopyBoot(){const C=CAN();if(!C)return;C.ready(CANOPY_GAME);
+  C.load().then(({data})=>{
+    const cloud=data&&data.state;let applied=false;try{applied=sessionStorage.getItem('crng-canopy-applied')==='1';sessionStorage.removeItem('crng-canopy-applied')}catch(e){}
+    if(cloud&&(cloud.savedAt||0)>(S.savedAt||0)&&!applied){canopyApply(data);return}
+    canopyOn=true;
+    if(!cloud||(S.savedAt||0)>(cloud.savedAt||0)){canopyDirty=true;canopyPush()}
+  }).catch(()=>{});
+  setInterval(canopyPush,30000);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)canopyPush()});
+  addEventListener('pagehide',canopyPush);
+})();
+function canopyTransfer(){ // von chessrng.web.app aus: Spielstand in die Canopy ID kopieren
+  const w=window.open(CANOPY_URL+'/transfer.html?g='+CANOPY_GAME,'canopy-transfer','width=480,height=680');
+  if(!w){toast('Bitte Pop-ups für diese Seite erlauben.');return}
+  const onMsg=e=>{if(e.origin!==CANOPY_URL||e.source!==w)return;const m=e.data;if(!m||m.canopy!==1)return;
+    if(m.type==='transfer-ready'){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(err){}w.postMessage({canopy:1,type:'transfer-data',data:JSON.stringify(canopyPayload())},CANOPY_URL)}
+    if(m.type==='transfer-done'){toast('Spielstand ist jetzt in deiner Canopy ID.');removeEventListener('message',onMsg)}};
+  addEventListener('message',onMsg)}
 
 /* ================= UI HELPERS ================= */
 const $=(q,r=document)=>r.querySelector(q), $$=(q,r=document)=>[...r.querySelectorAll(q)];
@@ -982,12 +1021,14 @@ function renderRoll(){
     <ol class="odds" id="odds"></ol>
     <div class="stats" id="stats"></div>
     <details class="settings"><summary>Einstellungen</summary><div class="inner">
+      ${CAN()?'':'<div><button class="btn sm" id="bCanopy" type="button">In Canopy ID übertragen</button></div>'}
       <div><button class="btn danger sm" id="bReset" type="button">Spielstand zurücksetzen</button></div>
     </div></details>
    </aside></div>`;
   $('#bRoll').onclick=()=>doRoll(1);$('#bRoll10').onclick=()=>doRoll(10);$('#bRoll100').onclick=()=>doRoll(100);
   $('#optAuto').onchange=e=>{S.opt.auto=e.target.checked;save()};
   $('#optFast').onchange=e=>{S.opt.fast=e.target.checked;save()};
+  const bc=$('#bCanopy');if(bc)bc.onclick=canopyTransfer;
   const rb=$('#bReset');rb.onclick=()=>{if(rb.dataset.c){localStorage.removeItem(KEY);S=fresh();save();setTab('roll');toast('Spielstand zurückgesetzt.')}else{rb.dataset.c=1;rb.textContent='Wirklich alles löschen? Nochmal klicken';setTimeout(()=>{if(rb.isConnected){delete rb.dataset.c;rb.textContent='Spielstand zurücksetzen'}},4000)}};
   renderHist();renderOdds();updateRollBtns();
 }

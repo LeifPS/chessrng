@@ -398,6 +398,17 @@ input[type=text],select{background:var(--bg-2);border:1px solid var(--line-2);bo
 <div id="toast" hidden></div>
 
 <script src="https://canopybase.pages.dev/sdk/canopy-sdk.js"></script>
+<script src="https://canopybase.pages.dev/sdk/canopy-bridge.js"></script>
+<script>
+// Canopy: Spielstand mit der Canopy ID abgleichen (mehrere Spielstände, Geräte-Sync). Übertragen-Knopf ist in den Einstellungen.
+CanopyBridge.init({
+  game: 'chess-rng', keys: ['chessrng-v1', 'chessrng-player'], button: false,
+  volatile: { 'chessrng-v1': ['rolls', 'tick', 'savedAt', 'tab'] },
+  legacySyncKey: 'chessrng-canopy-sync',
+  // früheres Format { state, playerId }
+  legacy: function (d) { if (!d || !d.state) return null; var k = { 'chessrng-v1': JSON.stringify(d.state) }; if (d.playerId) k['chessrng-player'] = d.playerId; return k; }
+});
+</script>
 <script>
 "use strict";
 /* ================= DATA ================= */
@@ -924,56 +935,12 @@ function load(){let o=null;try{const raw=localStorage.getItem(KEY);if(raw)o=JSON
   return S}
 let S=load();
 const NET=()=>window.CRNG_NET||null;
-let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{if(canopyReloading)return;S.savedAt=Date.now();canopyDirty=true;try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}canopySoon()},200)}
+let saveT=0;function save(){clearTimeout(saveT);saveT=setTimeout(()=>{S.savedAt=Date.now();try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}},200)}
 
 /* ================= CANOPY ================= */
-// Canopy Base (canopybase.pages.dev): Läuft das Spiel dort im Player, wird der Spielstand zusätzlich in der
-// Canopy ID gespeichert (2 s nach jeder Änderung, zusätzlich alle 30 s und beim Verlassen). Direkt auf chessrng.web.app ändert sich nichts,
-// außer dem Button "In Canopy ID übertragen" in den Einstellungen. Lokal gespeichert wird immer wie bisher.
-//
-// Abgleich NICHT nach Uhrzeit, sondern nach Cloud-Version: Lokal wird gemerkt, welche Cloud-Version dieser
-// Stand zuletzt hatte (SYNC_KEY). Ist die Cloud neuer (anderes Gerät, neu übertragen), gewinnt die Cloud.
-// Bevor ein lokaler Stand ersetzt wird, wird er unter KEY+'-backup-<zeit>' gesichert.
-const CANOPY_URL='https://canopybase.pages.dev', CANOPY_GAME='chess-rng', PID_KEY='chessrng-player', SYNC_KEY='chessrng-canopy-sync';
-const CAN=()=>(window.Canopy&&window.Canopy.inHub)?window.Canopy:null;
-let canopyDirty=false, canopyOn=false;
-var canopyReloading=false, canopySoonT=0, canopyBusy=false; // var: wird in save() schon vor dieser Zeile gelesen
-// 2 s nach der letzten Änderung hochladen. Nur beim Schließen zu speichern reicht nicht: der Browser bricht das ab.
-function canopySoon(){if(!CAN()||canopySoonT)return;canopySoonT=setTimeout(()=>{canopySoonT=0;canopyPush()},2000)} // höchstens alle 2 s
-function canopyPayload(){let pid=null;try{pid=localStorage.getItem(PID_KEY)}catch(e){}return{state:S,playerId:pid}}
-function syncedVersion(){try{const o=JSON.parse(localStorage.getItem(SYNC_KEY)||'null');return o&&typeof o.v==='number'?o.v:null}catch(e){return null}}
-function setSynced(v){try{localStorage.setItem(SYNC_KEY,JSON.stringify({v:v,at:Date.now()}))}catch(e){}}
-function canopyApply(d,version){ // Cloud-Stand übernehmen (lokalen vorher sichern) und neu laden
-  clearTimeout(saveT);canopyOn=false;canopyReloading=true;
-  try{const old=localStorage.getItem(KEY);if(old)localStorage.setItem(KEY+'-backup-'+Date.now(),old);
-    localStorage.setItem(KEY,JSON.stringify(d.state));if(d.playerId)localStorage.setItem(PID_KEY,d.playerId);setSynced(version)}catch(e){return}
-  location.reload()}
-function canopyPush(){const C=CAN();if(!C||!canopyOn||!canopyDirty)return;
-  if(canopyBusy)return; // läuft schon ein Upload, geht der nächste danach los
-  canopyDirty=false;canopyBusy=true;
-  C.save(canopyPayload()).then(r=>{
-    if(r&&r.ok)setSynced(r.version);
-    else if(r&&r.conflict&&r.data&&r.data.state)canopyApply(r.data,r.version); // woanders neuer gespeichert: Cloud gewinnt
-  }).catch(()=>{canopyDirty=true}).finally(()=>{canopyBusy=false;if(canopyDirty)canopySoon()})}
-(function canopyBoot(){const C=CAN();if(!C)return;C.ready(CANOPY_GAME);
-  C.load().then(({data,version})=>{
-    const cloud=data&&data.state, mine=syncedVersion();
-    if(cloud&&(mine===null||version>mine)){canopyApply(data,version);return} // Cloud ist neuer oder dieser Stand war nie abgeglichen
-    canopyOn=true;
-    if(!cloud||version===mine){canopyDirty=true;canopyPush()}
-    else C.save(canopyPayload(),{force:true}).then(r=>{if(r&&r.ok)setSynced(r.version)}).catch(()=>{}); // Cloud wurde zurückgesetzt
-  }).catch(()=>{});
-  setInterval(canopyPush,30000);
-  document.addEventListener('visibilitychange',()=>{if(document.hidden)canopyPush()});
-  addEventListener('pagehide',canopyPush);
-})();
-function canopyTransfer(){ // von chessrng.web.app aus: Spielstand in die Canopy ID kopieren
-  const w=window.open(CANOPY_URL+'/transfer.html?g='+CANOPY_GAME,'canopy-transfer','width=480,height=680');
-  if(!w){toast('Bitte Pop-ups für diese Seite erlauben.');return}
-  const onMsg=e=>{if(e.origin!==CANOPY_URL||e.source!==w)return;const m=e.data;if(!m||m.canopy!==1)return;
-    if(m.type==='transfer-ready'){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(err){}w.postMessage({canopy:1,type:'transfer-data',data:JSON.stringify(canopyPayload())},CANOPY_URL)}
-    if(m.type==='transfer-done'){toast('Spielstand ist jetzt in deiner Canopy ID.');removeEventListener('message',onMsg)}};
-  addEventListener('message',onMsg)}
+// Abgleich mit der Canopy ID macht die gemeinsame Canopy-Brücke (siehe <head>).
+const CAN=()=>!!(window.Canopy&&window.Canopy.inHub);
+function canopyTransfer(){ if(window.CanopyBridge) window.CanopyBridge.transfer(); }
 
 /* ================= UI HELPERS ================= */
 const $=(q,r=document)=>r.querySelector(q), $$=(q,r=document)=>[...r.querySelectorAll(q)];
